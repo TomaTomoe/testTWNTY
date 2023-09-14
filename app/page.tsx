@@ -1,10 +1,19 @@
 /* Components */
-import { Counter } from './components/Counter/Counter'
+import { Products } from './components/Products/Products'
+import { ShoppingCart } from './components/ShoppingCart/ShoppingCart'
 
-export default function IndexPage() {
-  return <Counter />
+/* Instruments */
+import styles from './styles/page.module.css'
+
+export default async function IndexPage() {
+  return (
+    <main className={styles.main}>
+      <ShoppingCart />
+      <Products />
+    </main>
+  )
 }
 
 export const metadata = {
-  title: 'Redux Toolkit',
+  title: 'Products',
 }

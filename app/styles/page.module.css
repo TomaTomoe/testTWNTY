@@ -1,0 +1,8 @@
+.main {
+  grid-area: main;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}

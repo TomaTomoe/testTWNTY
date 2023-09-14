@@ -1,0 +1,15 @@
+.container {
+  padding: 24px 48px;
+  display: flex;
+  gap: 24px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+.title {
+  padding: 24px 24px 12px 24px;
+  text-align: center;
+}
