@@ -1,29 +1,20 @@
-# Redux Toolkit TypeScript Example
+# Description
 
-This example shows how to integrate Next.js with [Redux Toolkit](https://redux-toolkit.js.org).
+In this project, I worked with technologies that were new to me, including Next.js. They created both challenges and exciting learning opportunities. Setting up a Redux store was a new experience for me and I wish I had more experience in that aspect. I ran into some obstacles while setting up the project and creating the reducers, which forced me to spend time refining the logic and thinking about the most efficient implementation strategy. In the end, I decided to build the calculation logic into the components, preferring to use actions mostly to store pre-calculated data. This approach felt more intuitive to me, especially with the Redux Toolkit where I organized the store into two separate slices. Looking ahead, I'm interested in implementing local storage for the cartSlice, with the help of redux-persist.
 
-The **Redux Toolkit** is a standardized way to write Redux logic (create actions and reducers, setup the store with some default middlewares like redux devtools extension). This example demonstrates each of these features with Next.js
 
-## Deploy your own
+## Running locally in development mode
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+To get started, just clone the repository and run `npm install && npm run dev`:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-redux&project-name=with-redux&repository-name=with-redux)
+    npm install
+    npm run dev
 
-## How to use
+## Building and deploying in production
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+If you wanted to run this site in production, you should install modules then build the site with `npm run build` and run it with `npm start`:
 
-```bash
-npx create-next-app --example with-redux with-redux-app
-```
+    npm install
+    npm run build
+    npm start
 
-```bash
-yarn create next-app --example with-redux with-redux-app
-```
-
-```bash
-pnpm create next-app --example with-redux with-redux-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
