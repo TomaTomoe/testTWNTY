@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export interface ProductData {
   quantity: number;
@@ -10,9 +10,9 @@ export interface ProductsState {
 }
 
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {
-  const response = await fetch("https://testtask.twnty.de/")
-  const result = await response.json()
-  return result
+  const response = await fetch("https://testtask.twnty.de/");
+  const result = await response.json();
+  return result;
 });
 
 const initialState: ProductsState = {
@@ -24,9 +24,8 @@ export const productSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.items = action.payload
-      })
-  }
-})
+    builder.addCase(fetchProducts.fulfilled, (state, action) => {
+      state.items = action.payload;
+    });
+  },
+});

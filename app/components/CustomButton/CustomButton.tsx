@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 /* Instruments */
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler } from "react";
 
-import styles from './customButton.module.css'
+import styles from "./customButton.module.css";
 
 interface IProps {
   title?: string | number;
@@ -11,27 +11,30 @@ interface IProps {
   classNames?: string;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
   btnIcon?: string;
-  isDisabled?: boolean
+  isDisabled?: boolean;
 }
 
-export const CustomButton = ({title, classNames, handleClick, btnIcon, isDisabled = false, type = 'button'}: IProps) => {
+export const CustomButton = ({
+  title,
+  classNames,
+  handleClick,
+  btnIcon,
+  isDisabled = false,
+  type = "button",
+}: IProps) => {
   return (
     <button
       disabled={isDisabled}
       type={type}
-      className={`${styles.btn} ${isDisabled ? styles.disabled : ''} ${classNames}`}
+      className={`${styles.btn} ${
+        isDisabled ? styles.disabled : ""
+      } ${classNames}`}
       onClick={handleClick}
     >
       {btnIcon && (
-          <img
-            src={btnIcon}
-            className={`${styles.image}`}
-            alt="button icon"
-          />
+        <img src={btnIcon} className={`${styles.image}`} alt="button icon" />
       )}
-      <span>
-        {title}
-      </span>
+      <span>{title}</span>
     </button>
-  )
-}
+  );
+};

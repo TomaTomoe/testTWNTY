@@ -1,4 +1,4 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 export interface Product {
   [key: string]: number;
@@ -15,46 +15,47 @@ const initialState: CartState = {
   cartItems: {},
   cartTotalQuantity: 0,
   cartTotalPrice: 0,
-  isOpen: false
+  isOpen: false,
 };
 
 export const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
   reducers: {
     addToCart(state, action: PayloadAction<string>) {
-      const productName = action.payload
+      const productName = action.payload;
       if (state.cartItems[productName] === undefined) {
-        state.cartItems[productName] = 1
-        state.cartTotalQuantity += 1
+        state.cartItems[productName] = 1;
+        state.cartTotalQuantity += 1;
       }
     },
     increment(state, action: PayloadAction<string>) {
-      const productName = action.payload
+      const productName = action.payload;
       if (state.cartItems[productName] !== undefined) {
-        state.cartItems[productName] += 1
-        state.cartTotalQuantity += 1
+        state.cartItems[productName] += 1;
+        state.cartTotalQuantity += 1;
       }
     },
     decrement(state, action: PayloadAction<string>) {
-      const productName = action.payload
+      const productName = action.payload;
       if (state.cartItems[productName] !== undefined) {
-        state.cartItems[productName] -= 1
-        state.cartTotalQuantity -= 1
+        state.cartItems[productName] -= 1;
+        state.cartTotalQuantity -= 1;
       }
     },
     deleteProduct(state, action: PayloadAction<string>) {
-      const productName = action.payload
+      const productName = action.payload;
       if (state.cartItems[productName] !== undefined) {
-        state.cartTotalQuantity = state.cartTotalQuantity - state.cartItems[productName]
-        delete state.cartItems[productName]
-      } 
+        state.cartTotalQuantity =
+          state.cartTotalQuantity - state.cartItems[productName];
+        delete state.cartItems[productName];
+      }
     },
-    setTotalPriceState(state, action: PayloadAction<number>){
-      state.cartTotalPrice = action.payload
+    setTotalPriceState(state, action: PayloadAction<number>) {
+      state.cartTotalPrice = action.payload;
     },
-    toggleShoppingCart(state){
-      state.isOpen = !state.isOpen
-    }
-  }
-})
+    toggleShoppingCart(state) {
+      state.isOpen = !state.isOpen;
+    },
+  },
+});

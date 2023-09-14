@@ -1,10 +1,10 @@
 /* Components */
-import { CustomButton } from "@/app/components/CustomButton/CustomButton"
+import { CustomButton } from "@/app/components/CustomButton/CustomButton";
 
 /* Instruments */
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler } from "react";
 
-import styles from './productCard.module.css'
+import styles from "./productCard.module.css";
 
 interface IProps {
   productName: string;
@@ -14,17 +14,25 @@ interface IProps {
   isAdded: boolean;
 }
 
-export const ProductCard = ({productName, productQuantity, productPrice, handleClick, isAdded}: IProps) => {
+export const ProductCard = ({
+  productName,
+  productQuantity,
+  productPrice,
+  handleClick,
+  isAdded,
+}: IProps) => {
   return (
     <div className={`${styles.wrapper}`}>
       <h4 className={`${styles.name}`}>{productName}</h4>
-      <div className={`${styles.quantity}`}>Available amount: {productQuantity}</div>
+      <div className={`${styles.quantity}`}>
+        Available amount: {productQuantity}
+      </div>
       <div className={`${styles.price}`}>Price per unit: ${productPrice}</div>
-      <CustomButton 
-        title='Add to Cart' 
+      <CustomButton
+        title="Add to Cart"
         handleClick={handleClick}
         isDisabled={isAdded}
       />
     </div>
-  )
-}
+  );
+};
